@@ -17,13 +17,13 @@ const projects = [
     github: 'https://github.com/Hari-Prasad0055/',
     live: 'https://project1-janw.onrender.com/',
   },
-  // {
-  //   title: 'Omni - Creative Agency',
-  //   description: 'An Awwwards-winning landing page for a creative agency featuring scrollytelling and custom cursor interactions.',
-  //   tech: ['Vite', 'React', 'GSAP', 'Lenis'],
-  //   github: 'https://github.com/Hari-Prasad0055/',
-  //   live: '#',
-  // }
+  {
+    title: 'Harbor IQ — DP World Hackathon 2026',
+    description: 'Built a smart berth allocation system using MERN stack.Integrated AIS APIs to predict vessel arrivals in real time. Improved decision efficiency by simulating real-world port constraints.',
+    tech: ['Vite', 'React', 'AIS API', 'Weather API Integration', 'REST APIs'],
+    github: 'https://github.com/Hari-Prasad0055/',
+    live: 'https://harbor-iq.vercel.app/',
+  }
 ];
 
 export default function Projects() {
