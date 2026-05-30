@@ -8,7 +8,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { name, email, message } = formData;
-    if(!name || !email || !message) {
+    if (!name || !email || !message) {
       alert("Please fill in all fields.");
       return;
     }
@@ -38,7 +38,7 @@ export default function Contact() {
               Say Hello
             </a>
 
-            <a href="/HARI PRASAD CV.pdf" download="Hari Prasad CV.pdf" className="group flex items-center gap-3 px-8 py-4 bg-white/5 text-white border border-white/10 rounded-full font-medium hover:bg-white/10 hover:scale-105 transition-all">
+            <a href="/HARI PRASAD_CV.pdf" download="Hari Prasad CV.pdf" className="group flex items-center gap-3 px-8 py-4 bg-white/5 text-white border border-white/10 rounded-full font-medium hover:bg-white/10 hover:scale-105 transition-all">
               <Download size={20} />
               Resume
             </a>
@@ -48,29 +48,29 @@ export default function Contact() {
           <form className="max-w-md mx-auto w-full flex flex-col gap-4 mb-20 text-left" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-1.5">
               <label className="text-sm text-zinc-400 font-medium px-2">Name</label>
-              <input 
-                type="text" 
-                placeholder="John Doe" 
+              <input
+                type="text"
+                placeholder="John Doe"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-white/30 transition-colors" 
+                className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-white/30 transition-colors"
               />
             </div>
             <div className="flex flex-col gap-1.5">
               <label className="text-sm text-zinc-400 font-medium px-2">Email</label>
-              <input 
-                type="email" 
-                placeholder="john@example.com" 
+              <input
+                type="email"
+                placeholder="john@example.com"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-white/30 transition-colors" 
+                className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-white/30 transition-colors"
               />
             </div>
             <div className="flex flex-col gap-1.5">
               <label className="text-sm text-zinc-400 font-medium px-2">Message</label>
-              <textarea 
-                rows="4" 
-                placeholder="How can I help you?" 
+              <textarea
+                rows="4"
+                placeholder="How can I help you?"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-white/30 transition-colors resize-none"

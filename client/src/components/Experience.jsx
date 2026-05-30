@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 const experiences = [
   {
     period: '2026 - Present',
-    role: 'Senior Frontend Developer',
-    company: 'NOBLEX',
-    description: 'Noblex is a community-driven platform designed for NIT Warangal alumni to connect, share experiences, opportunities, and insights related to college life, careers, and beyond. It acts as a centralized hub for collaboration, networking, and knowledge exchange.',
+    role: 'AI Data Consultant | Deccan AI',
+    company: 'Deccan AI',
+    description: 'Worked on AI data annotation and quality assurance projects.Supported the creation of training datasets for LLMs.Analyzed text, audio, and/or image data to improve dataset accuracy and consistency.',
   },
   {
     period: '2023 - Present',

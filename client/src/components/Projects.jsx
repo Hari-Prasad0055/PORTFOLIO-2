@@ -18,11 +18,11 @@ const projects = [
     live: 'https://project1-janw.onrender.com/',
   },
   {
-    title: 'Harbor IQ — DP World Hackathon 2026',
-    description: 'Built a smart berth allocation system using MERN stack.Integrated AIS APIs to predict vessel arrivals in real time. Improved decision efficiency by simulating real-world port constraints.',
-    tech: ['Vite', 'React', 'AIS API', 'Weather API Integration', 'REST APIs'],
+    title: 'PresenceAI',
+    description: 'Advanced neural networks recognize every student’s face from a single class photo, making attendance instant and accurate.Leveraging FaceRecognition and Dlib for high-fidelity facial biometrics.Utilizing Resemblyzer and Librosa for unique student voice signatures.',
+    tech: ['FLASK', 'SUPABASE', 'FaceRecognition', 'Dlib', 'Resemblyzer', 'Librosa'],
     github: 'https://github.com/Hari-Prasad0055/',
-    live: 'https://harbor-iq.vercel.app/',
+    live: 'https://presenceai-virid.vercel.app/',
   }
 ];
 
