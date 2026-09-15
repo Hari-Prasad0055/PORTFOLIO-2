@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
   const [isHovered, setIsHovered] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const updateMousePosition = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
+      if (!isVisible) setIsVisible(true);
     };
 
     const handleMouseOver = (e) => {
@@ -25,46 +27,52 @@ export default function CustomCursor() {
       }
     };
 
+    const handleMouseLeave = () => setIsVisible(false);
+
     window.addEventListener('mousemove', updateMousePosition);
     window.addEventListener('mouseover', handleMouseOver);
+    document.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
       window.removeEventListener('mousemove', updateMousePosition);
       window.removeEventListener('mouseover', handleMouseOver);
+      document.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, []);
+  }, [isVisible]);
+
+  if (!isVisible) return null;
 
   return (
-    <>
+    <div className="hidden lg:block pointer-events-none z-[9999] fixed top-0 left-0">
+      {/* Inner Dot */}
       <motion.div
-        className="fixed top-0 left-0 w-4 h-4 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference"
+        className="w-3 h-3 bg-blue-600 rounded-full shadow-md"
         animate={{
-          x: mousePosition.x - 8,
-          y: mousePosition.y - 8,
-          scale: isHovered ? 2 : 1,
+          x: mousePosition.x - 6,
+          y: mousePosition.y - 6,
+          scale: isHovered ? 1.8 : 1,
         }}
         transition={{
           type: 'spring',
-          stiffness: 500,
-          damping: 28,
-          mass: 0.5,
+          stiffness: 800,
+          damping: 35,
         }}
       />
+      {/* Outer Ring */}
       <motion.div
-        className="fixed top-0 left-0 w-10 h-10 border border-white/30 rounded-full pointer-events-none z-[9998]"
+        className="w-8 h-8 border border-blue-500/40 rounded-full bg-blue-500/5 backdrop-blur-[1px]"
         animate={{
-          x: mousePosition.x - 20,
-          y: mousePosition.y - 20,
-          scale: isHovered ? 1.5 : 1,
-          opacity: isHovered ? 0 : 1,
+          x: mousePosition.x - 16,
+          y: mousePosition.y - 16,
+          scale: isHovered ? 1.6 : 1,
+          borderColor: isHovered ? 'rgba(124, 58, 237, 0.5)' : 'rgba(37, 99, 235, 0.3)',
         }}
         transition={{
           type: 'spring',
-          stiffness: 250,
-          damping: 20,
-          mass: 0.8,
+          stiffness: 300,
+          damping: 25,
         }}
       />
-    </>
+    </div>
   );
 }
